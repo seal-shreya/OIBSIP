@@ -1,73 +1,81 @@
+
 # Little Earth — Sustainable Lifestyle Landing Page
 
 **Internship:** Oasis Infobyte — Web Development & Designing  
 **Level / Task:** Level 1, Task 1 — Landing Page  
 **Folder:** `WebDev-L1-LandingPage`
 
-## Project overview
+## Project Overview
 
-Little Earth is a fictional sustainable-lifestyle brand concept. This responsive landing page encourages small everyday habits through a colourful, friendly layout and original CSS illustrations. It is a front-end learning project, not a real product or environmental certification.
+Little Earth is a fictional sustainable-lifestyle brand concept. This responsive landing page encourages small, everyday habits through a colourful, friendly layout and CSS illustrations.
+
+This is a front-end learning project, not a real product or environmental certification.
 
 ## Features
 
-- Sticky navigation linking to the page sections
-- Hero area with a headline, supporting copy, and calls to action
-- Three benefit cards about reusable items, intentional buying, and small habits
+- Sticky navigation with links to page sections
+- Hero section with a headline, supporting text, and calls to action
+- Benefit cards highlighting reusable items, intentional buying, and small habits
 - Story section, everyday-habit section, and closing call to action
-- CSS-created plant illustration; no external image assets required
-- Lavender, purple, mint, and warm neutral colour palette
-- Responsive CSS Grid/Flexbox layouts and a mobile breakpoint
-- Hover/entrance motion, keyboard focus styles, and reduced-motion support
-- Footer with section links, a fictional placeholder email contact (`hello@littleearth.example`), and current-year label
+- CSS-created plant illustration
+- Lavender, purple, mint, and warm-neutral colour palette
+- Responsive layouts using CSS Grid and Flexbox
+- Hover effects and entrance animations
+- Keyboard focus styles and reduced-motion support
+- Footer with navigation links and a fictional placeholder email
+- Current-year footer label
 
-## Technologies
+## Technologies Used
 
-- **HTML5** — semantic page structure and navigation
-- **CSS3** — layout, responsive styling, illustration, and motion
-- **Vanilla JavaScript** — updates the footer year
+- **HTML5** — semantic page structure
+- **CSS3** — layout, responsive styling, illustration, and animations
+- **Vanilla JavaScript** — dynamic footer year
 
 No framework, package manager, build process, or external library is required.
 
-## Run locally
+## How to Run
 
-1. Open this folder.
-2. Double-click `index.html`, or open it in a modern browser.
-3. Use the navigation and calls to action to move between the sections.
-4. Resize the browser or use responsive device emulation to inspect the mobile layout.
+1. Open the `WebDev-L1-LandingPage` folder.
+2. Open `index.html` in a modern web browser.
+3. Test the navigation links and calls to action.
+4. Resize the browser or use responsive device emulation to check the mobile layout.
 
-## Screenshots and output evidence
+## Screenshots
 
-Save genuine browser screenshots in `screenshots/` before submitting. Suggested filenames:
+The `screenshots/` folder contains the desktop and mobile screenshots.
 
 - `screenshots/landing-desktop.png`
 - `screenshots/landing-mobile.png`
 
-Do not mark the screenshot requirement complete until those files exist and show the actual page running.
+Open the images to check the layout, text visibility, and responsive presentation.
 
-## Level 1, Task 1 — feature checklist
-
-The boxes below reflect source-code inspection. An unchecked item is a known gap or a manual verification still to complete.
+## Level 1, Task 1 — Checklist
 
 - [x] Sticky navigation with at least three section links
-- [x] Hero headline, supporting text, and call-to-action links
-- [x] At least two distinct content sections
-- [x] Footer includes a placeholder contact link (`hello@littleearth.example`; fictional placeholder only)
-- [x] Consistent colour palette
-- [x] Responsive rules using CSS Grid/Flexbox and a mobile breakpoint
-- [x] `box-sizing: border-box` is applied
-- [x] Multiple typography sizes for headings and body copy
-- [x] Visually inspect the generated desktop/mobile screenshots for overlap, clipping, and any layout issue
-- [x] Generate genuine browser screenshots in `screenshots/`
+- [x] Hero headline, supporting text, and calls to action
+- [x] Multiple distinct content sections
+- [x] Footer with navigation and placeholder contact link
+- [x] Consistent colour palette and typography
+- [x] Responsive CSS Grid/Flexbox layouts and mobile breakpoint
+- [x] Multiple typography sizes
+- [x] Desktop and mobile screenshots generated
+- [ ] Manually verify navigation, links, and calls to action
+- [ ] Inspect desktop and mobile screenshots for clipping, overlap, and overflow
 
-## OIBSIP submission checklist
+## OIBSIP Submission Checklist
 
-- [ ] Keep this folder name exactly `WebDev-L1-LandingPage` inside the repository named `OIBSIP`.
-- [ ] Commit the source, this README, and screenshots/output evidence to the public `OIBSIP` repository.
-- [ ] Record an end-to-end demo. The first **2 seconds** must be a static title card showing **Shreya Seal**, **Web Development & Designing**, and **Landing Page**; then demonstrate the working site rather than showing only screenshots.
-- [ ] Post/link the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte` (a relevant tag such as `#webdevelopment` may also be used).
-- [ ] Leave substantive comments on at least two other interns' demo videos.
-- [ ] Submit the task form shared through the internship/orientation email and include the OIBSIP repository link.
+- [x] Project folder follows the required naming convention
+- [x] Source code, README, and screenshots committed to the repository
+- [ ] Record an end-to-end demo video
+- [ ] Include a static title card for the first **2 seconds** showing:
+  - **Name:** Shreya Seal
+  - **Track:** Web Development & Designing
+  - **Task:** Landing Page
+- [ ] Demonstrate the working page in the video
+- [ ] Post the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte`
+- [ ] Leave substantive comments on at least two other interns' demo videos
+- [ ] Submit the task form and include the repository link
 
-## Project note
+## Notes
 
-The sustainability copy is general lifestyle content. It does not claim that a particular product is certified, carbon-neutral, or independently measured to reduce environmental impact.
+Little Earth is a fictional concept. The email `hello@littleearth.example` is a placeholder, not a real contact address. The project does not claim environmental certification or independently measured environmental benefits.

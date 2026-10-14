@@ -4,79 +4,89 @@
 **Level / Task:** Level 1, Task 2 — Personal Portfolio  
 **Folder:** `WebDev-L1-PersonalPortfolio`
 
-## Project overview
+## Project Overview
 
-A responsive personal portfolio presenting Shreya Seal as an aspiring web developer and BE student in Artificial Intelligence and Machine Learning. It introduces her background, lists beginner-level skills honestly, and showcases two related front-end practice projects.
+This responsive personal portfolio introduces Shreya Seal as a B.E. student in Artificial Intelligence and Machine Learning and an aspiring web developer.
 
-## Profile details
+It presents her background, beginner-level technical skills, practice projects, and contact information in a clean lavender-and-purple design.
+
+## Profile Details
 
 - **Name:** Shreya Seal
-- **Role:** BE AIML student / aspiring web developer
-- **Education:** B.E. in Artificial Intelligence and Machine Learning, CMR Institute of Technology, Bangalore
+- **Role:** B.E. AIML student / aspiring web developer
+- **Education:** B.E. in Artificial Intelligence and Machine Learning
+- **Institution:** CMR Institute of Technology, Bangalore
 - **Course timeline:** 2024–2028
 - **Skills:** HTML, CSS, beginner JavaScript, beginner C, and beginner Python
 - **Email:** `sealshreya8@gmail.com`
-- **GitHub profile:** https://github.com/seal-shreya
+- **GitHub:** https://github.com/seal-shreya
 
 ## Features
 
-- Name and role in the hero section
-- CSS initials/avatar placeholder rather than an invented profile photo
-- About section describing learning interests and background
-- Skills displayed as visual tags
-- Two project cards describing the Little Earth landing page and Degree/Temperature Converter
-- Contact section with working email and GitHub profile links
-- Smooth-scroll navigation and a consistent lavender/purple visual identity
-- Responsive layout, hover feedback, keyboard focus styling, and reduced-motion support
-- Small JavaScript enhancement for the current copyright year
+- Name and role displayed in the hero section
+- CSS initials/avatar placeholder
+- About section describing background and learning interests
+- Technical skills displayed as visual tags
+- Two project cards featuring the Little Earth landing page and Degree temperature converter
+- Project descriptions and links
+- Email and GitHub profile links in the contact section
+- Smooth-scroll section navigation
+- Consistent colour palette and typography
+- Responsive layout for desktop and mobile screens
+- Hover feedback, keyboard focus styles, and reduced-motion support
+- Dynamic copyright year
 
-## Technologies
+## Technologies Used
 
-- HTML5
-- CSS3
-- Vanilla JavaScript for the current copyright year
+- **HTML5** — page structure and semantic content
+- **CSS3** — styling, layout, responsiveness, and animations
+- **Vanilla JavaScript** — current copyright year
 
-No framework, external JavaScript library, or build step is required.
+No framework, external JavaScript library, or build process is required.
 
-## Run locally
+## How to Run
 
-1. Open this folder.
-2. Open `index.html` in a modern browser.
+1. Open the `WebDev-L1-PersonalPortfolio` folder.
+2. Open `index.html` in a modern web browser.
 3. Test the navigation, project cards, email link, and GitHub profile link.
-4. Resize the browser or use responsive device emulation to check the mobile view.
+4. Resize the browser or use responsive device emulation to inspect the mobile layout.
 
-## Screenshots and output evidence
+## Screenshots
 
-Save genuine browser screenshots in `screenshots/` before submitting. Suggested filenames:
+The `screenshots/` folder contains desktop and mobile screenshots.
 
 - `screenshots/portfolio-desktop.png`
 - `screenshots/portfolio-mobile.png`
 
-## Level 1, Task 2 — feature checklist
+## Level 1, Task 2 — Checklist
 
-The boxes below reflect source-code inspection. An unchecked item is a known gap or a manual verification still to complete.
-
-- [x] Name, role title, and CSS initials/avatar placeholder
-- [x] About section with a concise description of background and interests
-- [x] Visual list of technical skills with beginner level stated where appropriate
-- [x] At least two project cards with a title and description
-- [x] Each project card includes a local demo link and a GitHub source-folder link
-- [x] Contact details include name, email, and GitHub profile
-- [x] Smooth-scroll navigation between sections
+- [x] Name and role displayed in the hero section
+- [x] About section with background and interests
+- [x] Technical skills listed with beginner-level descriptions where appropriate
+- [x] At least two project cards with titles and descriptions
+- [x] Project cards include local demo links and GitHub source-folder links
+- [x] Contact section includes email and GitHub profile
+- [x] Section navigation with smooth scrolling
 - [x] Consistent colour scheme and typography
-- [x] Responsive CSS rules for desktop and mobile
-- [x] Visually inspect the generated desktop/mobile screenshots for overlap, clipping, and any layout issue
-- [x] Generate genuine browser screenshots in `screenshots/`
+- [x] Responsive CSS for desktop and mobile layouts
+- [x] Desktop and mobile screenshots generated
+- [ ] Manually test navigation, project links, email link, and GitHub link
+- [ ] Inspect desktop and mobile screenshots for clipping, overlap, and overflow
 
-## OIBSIP submission checklist
+## OIBSIP Submission Checklist
 
-- [ ] Keep this folder name exactly `WebDev-L1-PersonalPortfolio` inside the repository named `OIBSIP`.
-- [ ] Commit the source, this README, and screenshots/output evidence to the public `OIBSIP` repository.
-- [ ] Record an end-to-end demo. The first **2 seconds** must be a static title card showing **Shreya Seal**, **Web Development & Designing**, and **Personal Portfolio**; then demonstrate the page and links working.
-- [ ] Post/link the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte` (a relevant tag such as `#webdevelopment` may also be used).
-- [ ] Leave substantive comments on at least two other interns' demo videos.
-- [ ] Submit the task form shared through the internship/orientation email and include the OIBSIP repository link.
+- [x] Project folder follows the required naming convention
+- [x] Source code, README, and screenshots committed to the repository
+- [ ] Record an end-to-end demo video
+- [ ] Include a static title card for the first **2 seconds** showing:
+  - **Name:** Shreya Seal
+  - **Track:** Web Development & Designing
+  - **Task:** Personal Portfolio
+- [ ] Demonstrate the portfolio and its links in the video
+- [ ] Post the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte`
+- [ ] Leave substantive comments on at least two other interns' demo videos
+- [ ] Submit the task form and include the repository link
 
-## Accuracy note
+## Accuracy Note
 
-Education, contact details, and skill levels above reflect the information supplied for this portfolio. The project cards link to both local demos and their GitHub source folders.
+Profile and education details are based on the information supplied for this portfolio. Skill descriptions are intentionally conservative and do not imply professional-level proficiency.

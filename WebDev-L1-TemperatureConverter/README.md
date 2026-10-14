@@ -4,87 +4,111 @@
 **Level / Task:** Level 1, Task 3 — Temperature Converter Website  
 **Folder:** `WebDev-L1-TemperatureConverter`
 
-## Project overview
+## Project Overview
 
-Degree is a responsive temperature conversion utility for Celsius, Fahrenheit, and Kelvin. It uses vanilla JavaScript to validate input, convert units, and explain invalid temperatures in a clear status message.
+Degree is a responsive temperature conversion utility for Celsius, Fahrenheit, and Kelvin.
+
+It uses HTML, CSS, and vanilla JavaScript to accept temperature values, convert between units, and display validation messages for invalid temperatures.
 
 ## Features
 
-- Numeric temperature input with empty-value and numeric validation
-- Separate selectors for the input unit and target/output unit
-- Converts between Celsius (°C), Fahrenheit (°F), and Kelvin (K)
-- Displays the requested converted value and its Celsius equivalent
-- Converts when the input or unit selectors change, and also through a visible **Convert temperature** button
+- Numeric temperature input
+- Separate input-unit and output-unit selectors
+- Conversion between Celsius (°C), Fahrenheit (°F), and Kelvin (K)
+- Visible **Convert temperature** button
+- Converted result with unit labels
+- Input validation for empty or invalid values
+- Validation for temperatures below absolute zero
 - Unit-swap control
 - Quick examples for common reference temperatures
-- Rejects values below absolute zero with a user-friendly error message
-- Rounds displayed results to two decimal places and avoids negative zero
-- Responsive layout, clear field labels, visible status text, keyboard focus styling, and reduced-motion support
-- No external frameworks, libraries, or build tools
+- Results rounded to two decimal places
+- Avoidance of negative-zero display
+- Responsive layout and labelled controls
+- Keyboard focus styling and reduced-motion support
 
-## Technologies
+## Technologies Used
 
 - **HTML5** — form controls, labels, and result area
-- **CSS3** — layout, styling, responsive breakpoints, and illustration
-- **Vanilla JavaScript** — conversion formulas, DOM event listeners, numeric checks, and result formatting
+- **CSS3** — layout, styling, and responsive breakpoints
+- **Vanilla JavaScript** — conversion formulas, validation, and result formatting
 
-## Conversion approach
+No external framework, library, or build tool is required.
 
-The script converts the input to Celsius first, then converts that Celsius value to the target unit:
+## Conversion Formulas
 
-- Fahrenheit to Celsius: `(°F - 32) × 5 / 9`
-- Kelvin to Celsius: `K - 273.15`
-- Celsius to Fahrenheit: `(°C × 9 / 5) + 32`
-- Celsius to Kelvin: `°C + 273.15`
+The conversion process uses Celsius as an intermediate value.
 
-Absolute zero is `−273.15°C` (equivalent to `0 K` and `−459.67°F`). Values below this physical limit are rejected. Kelvin is displayed without a degree symbol.
+- **Fahrenheit to Celsius:** `(°F - 32) × 5 / 9`
+- **Kelvin to Celsius:** `K - 273.15`
+- **Celsius to Fahrenheit:** `(°C × 9 / 5) + 32`
+- **Celsius to Kelvin:** `°C + 273.15`
 
-## Run locally
+Absolute zero is:
 
-1. Open this folder.
-2. Open `index.html` in a modern browser.
-3. Enter a value and choose the input/output units.
-4. Try the example buttons and swap control; test empty input and a value below absolute zero.
+- `-273.15°C`
+- `-459.67°F`
+- `0 K`
 
-## Screenshots and output evidence
+Temperatures below absolute zero should be rejected. Kelvin is displayed without a degree symbol.
 
-Save genuine browser screenshots in `screenshots/` before submitting. Suggested filenames:
+## How to Run
 
+1. Open the `WebDev-L1-TemperatureConverter` folder.
+2. Open `index.html` in a modern web browser.
+3. Enter a temperature.
+4. Select the input and output units.
+5. Press **Convert temperature**.
+6. Test the unit-swap control, quick examples, empty input, and below-absolute-zero validation.
+
+## Screenshots
+
+The `screenshots/` folder contains the following output evidence:
+
+- `screenshots/converter-desktop.png`
+- `screenshots/converter-mobile.png`
 - `screenshots/converter-valid-result.png`
 - `screenshots/converter-validation-error.png`
-- `screenshots/converter-mobile.png`
 
-Include a successful conversion and the below-absolute-zero validation state.
+Open the screenshots to review the layout and the displayed conversion or validation state.
 
-## Level 1, Task 3 — feature checklist
+## Level 1, Task 3 — Checklist
 
-The boxes below reflect source-code inspection. An unchecked item is a known gap or a manual verification still to complete.
-
-- [x] Numeric input field and checks for empty/non-finite input
-- [x] Input unit selector with Celsius, Fahrenheit, and Kelvin
+- [x] Numeric input field
+- [x] Input-unit selector for Celsius, Fahrenheit, and Kelvin
 - [x] Separate output-unit selector
-- [x] Visible **Convert temperature** submit button triggers the existing form validation and calculation
+- [x] Visible conversion button
 - [x] Result display with converted value and unit labels
-- [x] User-friendly validation for values below absolute zero
-- [x] Centred utility layout with labelled controls and result area
-- [x] Visually inspect the generated desktop/mobile and valid/error screenshots; conversion results are automatically tested by the verification script
-- [x] Generate genuine desktop/mobile, valid-result, and validation-error screenshots in `screenshots/`
+- [x] Validation handling implemented in the source
+- [x] Responsive layout and labelled controls
+- [x] Desktop, mobile, valid-result, and validation-error screenshots generated
+- [ ] Test representative conversions and compare the results with the expected values below
+- [ ] Confirm empty input and below-absolute-zero values display the correct validation message
+- [ ] Inspect desktop and mobile screenshots for clipping, overlap, and overflow
 
-## OIBSIP submission checklist
+## Suggested Test Cases
 
-- [ ] Keep this folder name exactly `WebDev-L1-TemperatureConverter` inside the repository named `OIBSIP`.
-- [ ] Commit the source, this README, and screenshots/output evidence to the public `OIBSIP` repository.
-- [ ] Record an end-to-end demo. The first **2 seconds** must be a static title card showing **Shreya Seal**, **Web Development & Designing**, and **Temperature Converter Website**; then demonstrate valid conversion and validation.
-- [ ] Post/link the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte` (a relevant tag such as `#webdevelopment` may also be used).
-- [ ] Leave substantive comments on at least two other interns' demo videos.
-- [ ] Submit the task form shared through the internship/orientation email and include the OIBSIP repository link.
+|   Input | Input Unit | Output Unit |  Expected Result |
+| ------: | ---------- | ----------- | ---------------: |
+|       0 | Celsius    | Fahrenheit  |             32°F |
+|     100 | Celsius    | Fahrenheit  |            212°F |
+|      32 | Fahrenheit | Celsius     |              0°C |
+|  273.15 | Kelvin     | Celsius     |              0°C |
+| -273.15 | Celsius    | Kelvin      |              0 K |
+|    -300 | Celsius    | Fahrenheit  | Validation error |
+|   Empty | Any        | Any         | Validation error |
 
-## Test cases to demonstrate
+Small rounding differences may occur for decimal values.
 
-| Input | From | To | Expected result |
-|---:|---|---|---:|
-| 0 | Celsius | Fahrenheit | 32°F |
-| 100 | Celsius | Fahrenheit | 212°F |
-| 32 | Fahrenheit | Celsius | 0°C |
-| 273.15 | Kelvin | Celsius | 0°C |
-| -300 | Celsius | Fahrenheit | Error: below absolute zero |
+## OIBSIP Submission Checklist
+
+- [x] Project folder follows the required naming convention
+- [x] Source code, README, and screenshots committed to the repository
+- [ ] Record an end-to-end demo video
+- [ ] Include a static title card for the first **2 seconds** showing:
+  - **Name:** Shreya Seal
+  - **Track:** Web Development & Designing
+  - **Task:** Temperature Converter Website
+- [ ] Demonstrate a successful conversion and an invalid-temperature case
+- [ ] Post the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte`
+- [ ] Leave substantive comments on at least two other interns' demo videos
+- [ ] Submit the task form and include the repository link
