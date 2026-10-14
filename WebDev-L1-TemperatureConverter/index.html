@@ -96,14 +96,18 @@
       status.className = 'status error';
     }
 
+    function clearResults(message) {
+      renderResult('—', unitNames[toUnit.value], resultValue);
+      renderResult('—', '°C', celsiusValue);
+      temperatureInput.removeAttribute('aria-invalid');
+      status.textContent = message;
+      status.className = 'status';
+    }
+
     function convertTemperature() {
       const rawValue = temperatureInput.value.trim();
       if (rawValue === '') {
-        renderResult('—', unitNames[toUnit.value], resultValue);
-        renderResult('—', '°C', celsiusValue);
-        temperatureInput.removeAttribute('aria-invalid');
-        status.textContent = 'Enter a value to get started.';
-        status.className = 'status';
+        showError('Enter a temperature value to convert.');
         return;
       }
 
@@ -135,15 +139,21 @@
       convertTemperature();
     });
 
-    temperatureInput.addEventListener('input', convertTemperature);
-    fromUnit.addEventListener('change', convertTemperature);
-    toUnit.addEventListener('change', convertTemperature);
+    temperatureInput.addEventListener('input', function () {
+      clearResults('Value changed. Click Convert to update the result.');
+    });
+    fromUnit.addEventListener('change', function () {
+      clearResults('Units changed. Click Convert to update the result.');
+    });
+    toUnit.addEventListener('change', function () {
+      clearResults('Units changed. Click Convert to update the result.');
+    });
 
     document.getElementById('swap-units').addEventListener('click', function () {
       const oldFrom = fromUnit.value;
       fromUnit.value = toUnit.value;
       toUnit.value = oldFrom;
-      convertTemperature();
+      clearResults('Units changed. Click Convert to update the result.');
     });
 
     document.querySelectorAll('.quick-button').forEach(function (button) {
@@ -153,13 +163,13 @@
         if (fromUnit.value === toUnit.value) {
           toUnit.value = fromUnit.value === 'C' ? 'F' : 'C';
         }
-        convertTemperature();
+        clearResults('Example loaded. Click Convert to calculate the result.');
         temperatureInput.focus();
       });
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
-    convertTemperature();
+    clearResults('Enter a value, then click Convert to get started.');
   </script>
 </body>
 </html>
