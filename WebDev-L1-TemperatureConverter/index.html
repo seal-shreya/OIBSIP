@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f6ff">
+  <meta name="description" content="A clean temperature converter for Celsius, Fahrenheit, and Kelvin.">
+  <title>Degree — Temperature Converter</title>
+  <style>
+    :root{--bg:#f8f6ff;--ink:#28233a;--muted:#716b82;--purple:#7451d4;--deep:#5033a4;--lav:#e9e0ff;--white:#fff;--line:#e8e2f2;--green:#24855a;--red:#b43d59;--radius:24px;--shadow:0 18px 50px rgba(72,49,125,.1)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{min-height:100vh;background:radial-gradient(circle at 10% 0%,#ebe3ff,transparent 28rem),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.6;display:flex;flex-direction:column}button,input,select{font:inherit}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--purple);outline-offset:3px}.container{width:min(1040px,calc(100% - 36px));margin:auto}
+    .skip-link{position:absolute;left:16px;top:-100px;z-index:10;padding:10px 14px;border-radius:10px;background:var(--deep);color:#fff;font-weight:800;text-decoration:none}.skip-link:focus{top:16px}
+    header{padding:22px 0}.nav{display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:-.05em;font-size:1.08rem}.brand-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:13px;background:var(--lav);color:var(--deep);font-size:1.25rem}.nav-note{color:var(--muted);font-size:.86rem;font-weight:650}
+    main{flex:1;display:grid;place-items:center;padding:26px 0 60px}.layout{display:grid;grid-template-columns:.78fr 1.22fr;gap:34px;align-items:center}.intro{padding:12px 0}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #ded2ff;background:#f0ebff;color:var(--deep);padding:7px 12px;border-radius:999px;font-size:.76rem;font-weight:850;letter-spacing:.06em;text-transform:uppercase}.eyebrow span{font-size:1rem}h1{font-size:clamp(2.8rem,5.5vw,4.5rem);letter-spacing:-.08em;line-height:1.02;margin:20px 0}.gradient{color:var(--purple)}.intro p{color:var(--muted);max-width:350px}.temperature-art{height:190px;display:flex;align-items:center;gap:16px;margin-top:30px}.thermometer{height:155px;width:49px;border:5px solid #bca9f4;border-radius:30px;position:relative;background:#fff;box-shadow:inset 0 0 0 5px #f1edff}.thermometer:before{content:"";position:absolute;left:10px;bottom:12px;width:19px;height:83px;border-radius:99px;background:linear-gradient(#bda7ff,#7451d4)}.thermometer:after{content:"";position:absolute;left:-11px;bottom:-13px;width:61px;height:61px;border-radius:50%;background:#7451d4;border:6px solid #fff;box-shadow:0 5px 20px rgba(116,81,212,.2)}.art-orbit{width:130px;height:130px;border-radius:50%;border:1px dashed #b9a8eb;display:grid;place-items:center;color:var(--purple);font-size:2.6rem;position:relative}.art-orbit:before,.art-orbit:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:#ffd99e}.art-orbit:before{top:10px;right:18px}.art-orbit:after{bottom:12px;left:8px;background:#a9e4c2}
+    .app-card{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:30px;padding:28px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}.app-card form{min-width:0}.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px}.card-head h2{font-size:1.4rem;letter-spacing:-.04em}.card-head p{color:var(--muted);font-size:.88rem;margin-top:4px}.live-badge{white-space:nowrap;background:#e9f8ef;color:var(--green);border-radius:999px;padding:6px 10px;font-size:.74rem;font-weight:850}
+    .field-label{display:block;font-size:.85rem;font-weight:800;margin-bottom:9px}.input-row{display:grid;grid-template-columns:1fr 125px;gap:12px}.control{width:100%;min-width:0;border:1px solid #ded7ed;border-radius:14px;background:#fff;color:var(--ink);padding:14px 15px;transition:border-color .18s ease,box-shadow .18s ease}.control:focus{border-color:var(--purple);box-shadow:0 0 0 4px rgba(116,81,212,.1);outline:none}.control[aria-invalid="true"]{border-color:var(--red);box-shadow:0 0 0 4px rgba(180,61,89,.1)}.control::placeholder{color:#aaa3ba}.helper{color:var(--muted);font-size:.78rem;margin-top:8px}.swap-row{display:flex;align-items:center;gap:12px;margin:21px 0}.rule{height:1px;background:var(--line);flex:1}.swap-button{width:42px;height:42px;border-radius:14px;border:1px solid #dfd5f7;background:var(--lav);color:var(--deep);font-size:1.25rem;cursor:pointer;transition:transform .18s ease,background .18s ease}.swap-button:hover{transform:rotate(180deg);background:#ded1ff}.convert-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.result-box{min-width:0;border-radius:18px;padding:16px;background:#f6f3ff;border:1px solid #e8e0ff}.result-box.secondary{background:#f2fbf5;border-color:#dcefe3}.result-label{font-size:.78rem;color:var(--muted);font-weight:800}.result-value{font-size:clamp(1.55rem,3vw,2.1rem);letter-spacing:-.055em;font-weight:900;margin-top:5px;overflow-wrap:anywhere}.result-unit{font-size:.86rem;color:var(--muted);font-weight:750}.status{min-height:24px;font-size:.84rem;margin-top:14px;color:var(--muted)}.status.error{color:var(--red);font-weight:700}.status.success{color:var(--green);font-weight:700}.quick-title{font-size:.8rem;font-weight:850;margin:22px 0 10px}.quick-values{display:flex;gap:8px;flex-wrap:wrap}.quick-button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 11px;font-size:.8rem;color:var(--deep);font-weight:750;cursor:pointer;transition:background .16s ease,border-color .16s ease}.quick-button:hover{background:var(--lav);border-color:#d6c8fa}.footnote{color:var(--muted);font-size:.76rem;margin-top:17px;border-top:1px solid var(--line);padding-top:14px}.footnote strong{color:var(--ink)}footer{padding:22px 0;color:var(--muted);font-size:.83rem}.footer-inner{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.footer-inner a{color:var(--deep);text-decoration:none;font-weight:750}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:15px}.intro{max-width:650px}.intro p{max-width:540px}.temperature-art{height:120px;margin-top:15px}.thermometer{height:105px;width:40px}.thermometer:before{height:52px;width:15px;left:8px}.thermometer:after{width:48px;height:48px;left:-9px;bottom:-11px}.art-orbit{width:100px;height:100px;font-size:2rem}main{padding-top:15px}}
+    @media(max-width:520px){.container{width:calc(100% - 28px)}header{padding:15px 0}.nav-note{font-size:.76rem}.app-card{padding:20px;border-radius:23px}.card-head{flex-direction:column;gap:9px}.input-row{grid-template-columns:1fr 105px;gap:8px}.control{padding:12px 10px}.convert-row{grid-template-columns:1fr}.result-box{padding:14px}.result-value{font-size:1.8rem}.intro h1{font-size:3.1rem}.temperature-art{height:105px}}
+    @media(max-width:390px){.input-row{grid-template-columns:1fr}.quick-button{flex:1 1 100%}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+  <style>
+    .convert-submit{width:100%;display:flex;justify-content:center;align-items:center;gap:10px;margin-top:17px;padding:14px 18px;border:0;border-radius:14px;background:#7451d4;color:#fff;font:inherit;font-weight:850;cursor:pointer;box-shadow:0 9px 22px rgba(116,81,212,.2);transition:transform .18s ease,background .18s ease}
+    .convert-submit:hover{background:#5033a4;transform:translateY(-2px)}
+    .convert-submit:focus-visible{outline:3px solid #7451d4;outline-offset:4px}
+    @media(prefers-reduced-motion:reduce){.convert-submit{transition:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#converter-title">Skip to converter</a>
+  <header><div class="container nav"><a class="brand" href="#top"><span class="brand-icon" aria-hidden="true">°</span> degree.</a><span class="nav-note">A tiny tool for big temperature changes</span></div></header>
+  <main id="top"><div class="container layout">
+    <section class="intro"><span class="eyebrow"><span aria-hidden="true">✦</span> SIMPLE. QUICK. PRECISE.</span><h1>Make sense<br>of the <span class="gradient">degrees.</span></h1><p>Convert temperatures between Celsius, Fahrenheit, and Kelvin in one clean little workspace. Enter a value, choose your units, and get your answer.</p><div class="temperature-art" aria-hidden="true"><div class="thermometer"></div><div class="art-orbit">°C</div></div></section>
+    <section class="app-card" aria-labelledby="converter-title"><div class="card-head"><div><h2 id="converter-title">Temperature converter</h2><p>Choose your starting and target units.</p></div><span class="live-badge">● Ready to convert</span></div>
+      <form id="converter-form" novalidate>
+        <label class="field-label" for="temperature">Temperature value</label>
+        <div class="input-row"><input class="control" id="temperature" name="temperature" type="number" step="any" inputmode="decimal" autocomplete="off" placeholder="e.g. 25" aria-describedby="input-help" required><select class="control" id="from-unit" name="from-unit" aria-label="Convert from"><option value="C">°C Celsius</option><option value="F">°F Fahrenheit</option><option value="K">K Kelvin</option></select></div>
+        <p class="helper" id="input-help">Values below absolute zero are not physically valid.</p>
+        <div class="swap-row"><div class="rule"></div><button class="swap-button" type="button" id="swap-units" aria-label="Swap input and output units" title="Swap units">⇄</button><div class="rule"></div></div>
+        <label class="field-label" for="to-unit">Convert to</label><select class="control" id="to-unit" name="to-unit"><option value="F">°F Fahrenheit</option><option value="C">°C Celsius</option><option value="K">K Kelvin</option></select>
+        <button class="convert-submit" type="submit">Convert temperature <span aria-hidden="true">→</span></button>
+        <div class="convert-row"><div class="result-box"><div class="result-label">Converted temperature</div><div class="result-value" id="result-value" aria-live="polite">— <span class="result-unit" id="result-unit">°F</span></div></div><div class="result-box secondary"><div class="result-label">In Celsius</div><div class="result-value" id="celsius-value">— <span class="result-unit">°C</span></div></div></div>
+        <p class="status" id="status" role="status" aria-live="polite">Enter a value to get started.</p>
+        <div class="quick-title">Try a quick example</div><div class="quick-values"><button class="quick-button" type="button" data-value="0" data-unit="C">Water freezes · 0°C</button><button class="quick-button" type="button" data-value="100" data-unit="C">Water boils · 100°C</button><button class="quick-button" type="button" data-value="32" data-unit="F">32°F</button><button class="quick-button" type="button" data-value="273.15" data-unit="K">273.15 K</button></div>
+      </form>
+      <p class="footnote"><strong>Note:</strong> Kelvin is written without a degree symbol. Results are rounded to 2 decimal places for readability; calculations use the entered value.</p>
+    </section>
+  </div></main>
+  <footer><div class="container footer-inner"><span>© <span id="year">2026</span> Degree · A learning project</span><a href="../WebDev-L1-PersonalPortfolio/index.html">Back to Shreya's portfolio ↗</a></div></footer>
+  <script>
+    // Convert any supported unit to Celsius first, then to the requested unit.
+    const form = document.getElementById('converter-form');
+    const temperatureInput = document.getElementById('temperature');
+    const fromUnit = document.getElementById('from-unit');
+    const toUnit = document.getElementById('to-unit');
+    const resultValue = document.getElementById('result-value');
+    const celsiusValue = document.getElementById('celsius-value');
+    const status = document.getElementById('status');
+
+    const unitNames = { C: '°C', F: '°F', K: 'K' };
+
+    function toCelsius(value, unit) {
+      if (unit === 'F') return (value - 32) * 5 / 9;
+      if (unit === 'K') return value - 273.15;
+      return value;
+    }
+
+    function fromCelsius(value, unit) {
+      if (unit === 'F') return value * 9 / 5 + 32;
+      if (unit === 'K') return value + 273.15;
+      return value;
+    }
+
+    function formatNumber(value) {
+      // Avoid displaying negative zero after rounding.
+      const rounded = Math.abs(value) < 0.005 ? 0 : value;
+      return rounded.toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function renderResult(value, unit, target) {
+      target.replaceChildren(document.createTextNode(value + ' '));
+      const unitElement = document.createElement('span');
+      unitElement.className = 'result-unit';
+      unitElement.textContent = unit;
+      target.append(unitElement);
+    }
+
+    function showError(message) {
+      renderResult('—', unitNames[toUnit.value], resultValue);
+      renderResult('—', '°C', celsiusValue);
+      temperatureInput.setAttribute('aria-invalid', 'true');
+      status.textContent = message;
+      status.className = 'status error';
+    }
+
+    function convertTemperature() {
+      const rawValue = temperatureInput.value.trim();
+      if (rawValue === '') {
+        renderResult('—', unitNames[toUnit.value], resultValue);
+        renderResult('—', '°C', celsiusValue);
+        temperatureInput.removeAttribute('aria-invalid');
+        status.textContent = 'Enter a value to get started.';
+        status.className = 'status';
+        return;
+      }
+
+      const value = Number(rawValue);
+      if (!Number.isFinite(value)) {
+        showError('Please enter a valid numeric temperature.');
+        return;
+      }
+
+      const celsius = toCelsius(value, fromUnit.value);
+      if (celsius < -273.15 - 1e-9) {
+        showError('That is below absolute zero (−273.15°C). Try a higher value.');
+        return;
+      }
+
+      const safeCelsius = Math.max(celsius, -273.15);
+      const converted = fromCelsius(safeCelsius, toUnit.value);
+      renderResult(formatNumber(converted), unitNames[toUnit.value], resultValue);
+      renderResult(formatNumber(safeCelsius), '°C', celsiusValue);
+      temperatureInput.removeAttribute('aria-invalid');
+      status.textContent = fromUnit.value === toUnit.value
+        ? 'Same unit selected — your value is unchanged.'
+        : 'Conversion complete. Your temperature is within the valid range.';
+      status.className = 'status success';
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      convertTemperature();
+    });
+
+    temperatureInput.addEventListener('input', convertTemperature);
+    fromUnit.addEventListener('change', convertTemperature);
+    toUnit.addEventListener('change', convertTemperature);
+
+    document.getElementById('swap-units').addEventListener('click', function () {
+      const oldFrom = fromUnit.value;
+      fromUnit.value = toUnit.value;
+      toUnit.value = oldFrom;
+      convertTemperature();
+    });
+
+    document.querySelectorAll('.quick-button').forEach(function (button) {
+      button.addEventListener('click', function () {
+        temperatureInput.value = button.dataset.value;
+        fromUnit.value = button.dataset.unit;
+        if (fromUnit.value === toUnit.value) {
+          toUnit.value = fromUnit.value === 'C' ? 'F' : 'C';
+        }
+        convertTemperature();
+        temperatureInput.focus();
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    convertTemperature();
+  </script>
+</body>
+</html>
