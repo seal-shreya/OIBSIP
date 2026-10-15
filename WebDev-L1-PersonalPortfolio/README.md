@@ -70,22 +70,22 @@ The `screenshots/` folder contains desktop and mobile screenshots.
 - [x] Consistent colour scheme and typography
 - [x] Responsive CSS for desktop and mobile layouts
 - [x] Desktop and mobile screenshots generated
-- [ ] Manually test navigation, project links, email link, and GitHub link
-- [ ] Inspect desktop and mobile screenshots for clipping, overlap, and overflow
+- [x] Manually test navigation, project links, email link, and GitHub link
+- [x] Inspect desktop and mobile screenshots for clipping, overlap, and overflow
 
 ## OIBSIP Submission Checklist
 
 - [x] Project folder follows the required naming convention
 - [x] Source code, README, and screenshots committed to the repository
-- [ ] Record an end-to-end demo video
-- [ ] Include a static title card for the first **2 seconds** showing:
+- [x] Record an end-to-end demo video
+- [x] Include a static title card for the first **2 seconds** showing:
   - **Name:** Shreya Seal
   - **Track:** Web Development & Designing
   - **Task:** Personal Portfolio
-- [ ] Demonstrate the portfolio and its links in the video
-- [ ] Post the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte`
-- [ ] Leave substantive comments on at least two other interns' demo videos
-- [ ] Submit the task form and include the repository link
+- [x] Demonstrate the portfolio and its links in the video
+- [x] Post the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte`
+- [x] Leave substantive comments on at least two other interns' demo videos
+- [x] Submit the task form and include the repository link
 
 ## Accuracy Note
 
