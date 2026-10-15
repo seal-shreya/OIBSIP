@@ -59,22 +59,22 @@ Open the images to check the layout, text visibility, and responsive presentatio
 - [x] Responsive CSS Grid/Flexbox layouts and mobile breakpoint
 - [x] Multiple typography sizes
 - [x] Desktop and mobile screenshots generated
-- [ ] Manually verify navigation, links, and calls to action
-- [ ] Inspect desktop and mobile screenshots for clipping, overlap, and overflow
+- [x] Manually verify navigation, links, and calls to action
+- [x] Inspect desktop and mobile screenshots for clipping, overlap, and overflow
 
 ## OIBSIP Submission Checklist
 
 - [x] Project folder follows the required naming convention
 - [x] Source code, README, and screenshots committed to the repository
-- [ ] Record an end-to-end demo video
-- [ ] Include a static title card for the first **2 seconds** showing:
+- [x] Record an end-to-end demo video
+- [x] Include a static title card for the first **2 seconds** showing:
   - **Name:** Shreya Seal
   - **Track:** Web Development & Designing
   - **Task:** Landing Page
-- [ ] Demonstrate the working page in the video
-- [ ] Post the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte`
-- [ ] Leave substantive comments on at least two other interns' demo videos
-- [ ] Submit the task form and include the repository link
+- [x] Demonstrate the working page in the video
+- [x] Post the demo on LinkedIn, tag Oasis Infobyte, and include `#oasisinfobyte`
+- [x] Leave substantive comments on at least two other interns' demo videos
+- [x] Submit the task form and include the repository link
 
 ## Notes
 
