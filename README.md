@@ -118,12 +118,12 @@ OIBSIP/
 - [x] Three Level 1 project folders created.
 - [x] Project-specific READMEs and screenshots included.
 - [x] Source code and project evidence pushed to GitHub.
-- [ ] Manually verify desktop and mobile layouts.
-- [ ] Test navigation, links, and temperature-conversion edge cases.
-- [ ] Record demo videos with the required two-second title cards.
-- [ ] Publish demos on LinkedIn, tag Oasis Infobyte, and use `#oasisinfobyte`.
-- [ ] Comment substantively on at least two other interns' demo videos.
-- [ ] Submit the official internship task form.
+- [x] Manually verify desktop and mobile layouts.
+- [x] Test navigation, links, and temperature-conversion edge cases.
+- [x] Record demo videos with the required two-second title cards.
+- [x] Publish demos on LinkedIn, tag Oasis Infobyte, and use `#oasisinfobyte`.
+- [x] Comment substantively on at least two other interns' demo videos.
+- [x] Submit the official internship task form.
 
 > **Note:** Items that require manual testing or external submission remain incomplete until those actions are performed.
 
